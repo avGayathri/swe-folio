@@ -8,12 +8,10 @@ favicon: /-/avgayathri.github.io/swe-folio/favicon.ico
 -- fastn.dependency: fastn-community.github.io/roboto-typography
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
 
+
 -- fastn.auto-import: avgayathri.github.io/swe-folio/FASTN/ds
 -- fastn.auto-import: avgayathri.github.io/swe-folio/assets
+-- fastn.auto-import: avgayathri.github.io/swe-folio/library/lib
 -- fastn.auto-import: doc-site
 
--- fastn.sitemap:
 
-# Home: index.html
-
-- Right Sidebar Sample: /sidebar/

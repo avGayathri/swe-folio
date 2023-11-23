@@ -1,0 +1,38 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 200px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+   
+}
+
+.sub-title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 80px;
+    color: orangered;
+    line-height: 100%; 
+}
+
+.snapshot-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-row {
+    background-color: rgb(253, 234, 212);
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-row {
+    display: flex;
+    justify-content: space-between;
+}
