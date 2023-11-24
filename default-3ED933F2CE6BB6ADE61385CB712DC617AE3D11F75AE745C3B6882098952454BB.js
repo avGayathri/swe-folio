@@ -843,6 +843,7 @@ fastn_dom.PropertyKind = {
     Selectable: 118,
     BackdropFilter: 119,
     Mask: 120,
+    TextInputValue: 121,
 };
 
 
@@ -2471,7 +2472,13 @@ class Node2 {
             }
         } else if (kind === fastn_dom.PropertyKind.TextInputType) {
             this.attachAttribute("type", staticValue);
-        } else if (kind === fastn_dom.PropertyKind.DefaultTextInputValue) {
+        } else if (kind === fastn_dom.PropertyKind.TextInputValue) {
+            this.#rawInnerValue = staticValue;
+            this.updateTextInputValue();
+        } else if(kind === fastn_dom.PropertyKind.DefaultTextInputValue) {
+            if(!fastn_utils.isNull(this.#rawInnerValue)) {
+                return;
+            }
             this.#rawInnerValue = staticValue;
             this.updateTextInputValue();
         } else if (kind === fastn_dom.PropertyKind.InputMaxLength) {
@@ -3234,6 +3241,7 @@ let fastn_utils = {
      */
     markdown_inline(i) {
         if (fastn_utils.isNull(i)) return;
+        i = i.toString();
         const { space_before, space_after } = fastn_utils.private.spaces(i);
         const o = (() => {
             let g = fastn_utils.private.replace_last_occurrence(marked.parse(i), "<p>", "");
@@ -3937,6 +3945,10 @@ const ftd = (function() {
 
     const global = {};
 
+    const onLoadListeners = new Set();
+
+    let fastnLoaded = false;
+
     exports.global = global;
 
     exports.riveNodes = riveNodes;
@@ -4188,6 +4200,26 @@ const ftd = (function() {
             localStorage.removeItem(key);
         }
     }
+
+    exports.on_load = listener => {
+        if(typeof listener !== 'function') {
+            throw new Error("listener must be a function");
+        }
+
+        if(fastnLoaded) {
+            listener();
+            return;
+        }
+        
+        onLoadListeners.add(listener);
+    };
+
+    exports.emit_on_load = () => {
+        if(fastnLoaded) return;
+        
+        fastnLoaded = true;
+        onLoadListeners.forEach(listener => listener());
+    };
 
     // LEGACY
 
