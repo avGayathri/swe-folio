@@ -1,83 +1,38 @@
--- ftd.column:
-width: fill-container
-height: fill-container
 
-
--- lib.header:
-header-text-1: Resume
-header-text-2: Projects
-header-text-3: Skills
-header-text-4: Contact
-title: **RESPE**
-
--- ftd.row:
-classes: about-row
-css: [ $assets.files.style.header.css]
-width: fill-container
-height: fill-container
-padding.px: 40
-background.solid: black
-
--- ftd.column:
-width.fixed.vw: 30
-height.fixed.vw: 12
-padding-right.px: 10
-margin-top.px: 20
-
-
--- ftd.text: Welcome  to  the  jungle , we've  got  plans  and  codes
-color: white
-role: $inherited.types.heading-medium
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 20
-
--- ftd.text: Github
-role: $inherited.types.copy-large
-color: white 
-
--- ftd.text: Linkedin
-role: $inherited.types.copy-large
-color: white 
-
--- ftd.text: Twitter
-role: $inherited.types.copy-large
-color: white 
-
--- ftd.text: Medium
-role: $inherited.types.copy-large
-color: white 
-
--- end: ftd.column
-
--- end: ftd.row
-
--- lib.snapshots:
-background-image: $assets.files.assets.bg1.jpg
-profile-pic: $assets.files.assets.profile-pic.jpg
+-- lib.swe-folio-temp:
+about: Welcome  to  the  jungle , we've  got  plans  and  codes
+contact-about:  Got  a  project  that's  wicked  cool  ?  Drop  me  a  line 
+head-text-1: Resume
+head-text-2: Projects
+head-text-3: Skills
+head-text-4: Contact
+head-link-1: https://trizui.trizwit.com/
+head-link-2: https://trizui.trizwit.com/
+head-link-3: https://trizui.trizwit.com/
+head-link-4: https://trizui.trizwit.com/
+social-text-1: Github
+social-text-2: Linkedin
+social-text-3: Twitter
+social-text-4: Facebook
+social-link-1: https://github.com/
+social-link-2: https://www.linkedin.com/
+social-link-3: https://twitter.com/
+social-link-4: https://medium.com/m/signin
+bg-image: $assets.files.assets.bg1.jpg
+profile-image: $assets.files.assets.profile-pic.jpg
 image-1: $assets.files.assets.image-1.jpg
 image-2: $assets.files.assets.image-2.jpg
 image-3: $assets.files.assets.image-3.jpg
-sub-title: RIDING THE WAVE OF INNOVATION
-
--- ftd.column:
-width: fill-container
-height: fill-container
-padding-left.px: 20
-padding-top.px: 30
-background.solid: black
-align-content: center
-
--- ftd.text: Got  a  project  that's  wicked  cool  ?  Drop  me  a  line  
-color: white
-role: $inherited.types.heading-medium
-
-
--- lib.contact:
-
--- end: ftd.column
+sub-title-text: RIDING THE WAVE OF INNOVATION
+contact-1: Email
+contact-2: Contact
+contact-link-1: https://trizui.trizwit.com/
+contact-link-2: https://trizui.trizwit.com/
+social-logo-1: $assets.files.assets.github.svg
+social-logo-2: $assets.files.assets.linkedin.png
+social-logo-3: $assets.files.assets.twitter.png
+social-logo-4: $assets.files.assets.facebook.png
+copyright: Copyright © 2023 - David, Software Engineer
 
 -- lib.works:
 title: works
@@ -100,21 +55,4 @@ work-year: 2019
 
 -- end: lib.works
 
--- ftd.row: 
-width: fill-container
-height: fill-container
-
--- lib.footer:
-copyright: Copyright © 2023 - David, Software Engineer
-logo-1: $assets.files.assets.instagram.png
-logo-2: $assets.files.assets.linkedin.png
-logo-3: $assets.files.assets.facebook.png
-logo-4: $assets.files.assets.twitter.png
-cta-link-1: https://trizui.trizwit.com/
-cta-link-2: https://trizui.trizwit.com/
-cta-link-3: https://trizui.trizwit.com/
-cta-link-4: https://trizui.trizwit.com/
-
--- end: ftd.row
-
--- end: ftd.column
+-- end: lib.swe-folio-temp

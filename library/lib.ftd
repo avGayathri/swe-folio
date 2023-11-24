@@ -3,6 +3,14 @@ string header-text-1:
 string header-text-2:
 string header-text-3:
 string header-text-4:
+string cta-link-1:
+string cta-link-2:
+string cta-link-3:
+string cta-link-4:
+boolean $is-active-1: false
+boolean $is-active-2: false
+boolean $is-active-3: false
+boolean $is-active-4: false
 string title:
 
 -- ftd.column:
@@ -17,24 +25,41 @@ width: fill-container
 height.fixed.vw: 4
 padding.px: 20
 ;;border-width.px: 3
-;;border-color: red
+;;border-color: white
 
 
 -- ftd.text: $header.header-text-1
 color: grey
 role: $inherited.types.blockquote
+link: $header.cta-link-1
+color if {header.is-active-1}: black
+$on-mouse-enter$: $ftd.set-bool($a = $header.is-active-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $header.is-active-1, v = false)
 
 -- ftd.text: $header.header-text-2
 color: grey
 role: $inherited.types.blockquote
+link: $header.cta-link-2
+color if {header.is-active-2}: black
+$on-mouse-enter$: $ftd.set-bool($a = $header.is-active-2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $header.is-active-2, v = false)
 
 -- ftd.text: $header.header-text-3
 color: grey
 role: $inherited.types.blockquote
+link: $header.cta-link-3
+color if {header.is-active-3}: black
+$on-mouse-enter$: $ftd.set-bool($a = $header.is-active-3, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $header.is-active-3, v = false)
 
 -- ftd.text: $header.header-text-4
 color: grey
 role: $inherited.types.blockquote
+link: $header.cta-link-4
+color if {header.is-active-4}: black
+$on-mouse-enter$: $ftd.set-bool($a = $header.is-active-4, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $header.is-active-4, v = false)
+
 
 -- end: ftd.row
 
@@ -98,12 +123,16 @@ height.fixed.vw: 25
 margin-bottom.px: 32
 
 -- ftd.image:
+classes: zoom
+css: [ $assets.files.style.header.css]
 src: $snapshots.profile-pic
 width.fixed.vw: 28
 height.fixed.vw: 24
 border-radius.px: 24
 
 -- ftd.image:
+classes: zoom
+css: [ $assets.files.style.header.css]
 src: $snapshots.image-1
 width.fixed.vw: 28
 height.fixed.vw: 24
@@ -119,12 +148,16 @@ height.fixed.vw: 25
 margin-bottom.px: 32
 
 -- ftd.image:
+classes: zoom
+css: [ $assets.files.style.header.css]
 src: $snapshots.image-2
 width.fixed.vw: 28
 height.fixed.vw: 24
 border-radius.px: 24
 
 -- ftd.image:
+classes: zoom
+css: [ $assets.files.style.header.css]
 src: $snapshots.image-3
 width.fixed.vw: 28
 height.fixed.vw: 24
@@ -146,6 +179,12 @@ border-radius.px: 24
 
 
 -- component contact:
+string contact-1:
+string contact-2:
+string cta-link-1:
+string cta-link-2: 
+boolean $is-active-1: false
+boolean $is-active-2: false
 
 -- ftd.column:
 width: fill-container
@@ -157,27 +196,34 @@ wrap: true
 align-content: center
 
 -- ftd.row:
-classes: contact-row
-css: [ $assets.files.style.header.css]
+classes: contact-row-1
+css: [$assets.files.style.header.css]
 width.fixed.vw: 40
 height.fixed.vw: 5
 padding.px: 18
 border-radius.px: 40
+;;background.solid if {contact.is-active-1}: white
+;;$on-mouse-enter$: $ftd.set-bool($a = $contact.is-active-1, v = true)
+;;$on-mouse-leave$: $ftd.set-bool($a = $contact.is-active-1, v = false)
+link: $contact.cta-link-1
 
 
--- ftd.text: Email
+-- ftd.text: $contact.contact-1
 role: $inherited.types.copy-large
 color: black
 margin-left.px: 30
 
-/-- ftd.text: 
+
+-- ftd.text: **>**
 role: $inherited.types.copy-large
 color: black
-margin-right.px: 20
+
 
 -- end: ftd.row
 
 -- ftd.row:
+classes: contact-row-2
+css: [$assets.files.style.header.css]
 width.fixed.vw: 40
 height.fixed.vw: 5
 padding.px: 18
@@ -185,12 +231,21 @@ border-radius.px: 40
 background.solid: black
 border-color: white
 border-width.px: 3
+link: $contact.cta-link-2
+;;background.solid if {contact.is-active-2}: grey
+;;$on-mouse-enter$: $ftd.set-bool($a = $contact.is-active-2, v = true)
+;;$on-mouse-leave$: $ftd.set-bool($a = $contact.is-active-2, v = false)
 
 
--- ftd.text: Contact
+-- ftd.text: $contact.contact-2
 role: $inherited.types.copy-large
 color: white
 margin-left.px: 30
+
+-- ftd.text: **>**
+role: $inherited.types.copy-large
+color: white
+
 
 -- end: ftd.row
 
@@ -302,41 +357,39 @@ string cta-link-4:
 
 -- ftd.column:
 width: fill-container
+height: fill-container
 
 
 -- ftd.row:
 width: fill-container
-height.fixed.px: 100
+height.fixed.vw: 4
 align-content: center
-background.solid: black
+background.solid: white
+spacing.fixed.px: 20
 
 
 -- ftd.image:
 src: $footer.logo-1
-width.fixed.px: 45
-margin-right.px: 20
+width.fixed.px: 35
 margin-top.px: 3
 link: $footer.cta-link-1
 
 
 -- ftd.image:
 src: $footer.logo-2
-width.fixed.px: 45
-margin-right.px: 20
+width.fixed.px: 35
 margin-top.px: 3
 link: $footer.cta-link-2
 
 -- ftd.image:
 src: $footer.logo-3
-width.fixed.px: 45
-margin-right.px: 20
+width.fixed.px: 35
 margin-top.px: 3
 link: $footer.cta-link-3
 
 -- ftd.image:
 src: $footer.logo-4
-width.fixed.px: 45
-margin-right.px: 20
+width.fixed.px: 35
 margin-top.px: 3
 link: $footer.cta-link-4
 
@@ -345,17 +398,13 @@ link: $footer.cta-link-4
 
 -- ftd.row:
 width: fill-container
-height.fixed.px: 50 
-align-self: center
+height.fixed.vw: 4 
 align-content: center
-border-radius.px: 1
 background.solid: black
 
 
 -- ftd.text: $footer.copyright
-margin-top.px: 15
 color: white
-height: fill-container
 role: $inherited.types.copy-regular
 
 -- end: ftd.row
@@ -363,3 +412,196 @@ role: $inherited.types.copy-regular
 -- end: ftd.column
 
 -- end: footer
+
+
+
+
+
+
+
+
+
+
+-- component swe-folio-temp:
+string about:
+string contact-about:
+string head-text-1:
+string head-text-2:
+string head-text-3:
+string head-text-4:
+string head-link-1:
+string head-link-2:
+string head-link-3:
+string head-link-4:
+string social-text-1:
+string social-text-2:
+string social-text-3:
+string social-text-4:
+string social-link-1:
+string social-link-2:
+string social-link-3:
+string social-link-4:
+boolean $is-active-1: false
+boolean $is-active-2: false
+boolean $is-active-3: false
+boolean $is-active-4: false
+ftd.image-src bg-image:
+ftd.image-src profile-image:
+ftd.image-src image-1:
+ftd.image-src image-2:
+ftd.image-src image-3:
+string sub-title-text:
+string contact-1:
+string contact-2:
+string contact-link-1:
+string contact-link-2:
+ftd.image-src social-logo-1:
+ftd.image-src social-logo-2:
+ftd.image-src social-logo-3:
+ftd.image-src social-logo-4:
+string copyright:
+children work-child:
+ 
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+background.solid: white
+
+-- header:
+header-text-1: $swe-folio-temp.head-text-1
+header-text-2: $swe-folio-temp.head-text-2
+header-text-3: $swe-folio-temp.head-text-3
+header-text-4: $swe-folio-temp.head-text-4
+cta-link-1: $swe-folio-temp.head-link-1
+cta-link-2: $swe-folio-temp.head-link-2
+cta-link-3: $swe-folio-temp.head-link-3
+cta-link-4: $swe-folio-temp.head-link-4
+title: **RESPE**
+
+-- end: ftd.column
+
+
+-- ftd.row:
+classes: about-row
+css: [ $assets.files.style.header.css]
+width: fill-container
+height: fill-container
+padding.px: 40
+background.solid: black
+
+-- ftd.column:
+width.fixed.vw: 30
+height.fixed.vw: 12
+padding-right.px: 10
+margin-top.px: 20
+
+
+-- ftd.text: $swe-folio-temp.about
+color: white
+role: $inherited.types.heading-medium
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 20
+
+-- ftd.text: $swe-folio-temp.social-text-1
+role: $inherited.types.copy-large
+color: white
+link: $swe-folio-temp.social-link-1 
+color if {swe-folio-temp.is-active-1}: grey
+$on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = false)
+
+-- ftd.text: $swe-folio-temp.social-text-2
+role: $inherited.types.copy-large
+color: white 
+link: $swe-folio-temp.social-link-2
+color if {swe-folio-temp.is-active-2}: grey
+$on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = false)
+
+-- ftd.text: $swe-folio-temp.social-text-3
+role: $inherited.types.copy-large
+color: white
+link: $swe-folio-temp.social-link-3 
+color if {swe-folio-temp.is-active-3}: grey
+$on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = false)
+
+-- ftd.text: $swe-folio-temp.social-text-4
+role: $inherited.types.copy-large
+color: white
+link: $swe-folio-temp.social-link-4 
+color if {swe-folio-temp.is-active-4}: grey
+$on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-4, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-4, v = false)
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- snapshots:
+background-image: $swe-folio-temp.bg-image
+profile-pic: $swe-folio-temp.profile-image
+image-1: $swe-folio-temp.image-1
+image-2: $swe-folio-temp.image-2
+image-3: $swe-folio-temp.image-3
+sub-title: $swe-folio-temp.sub-title-text
+
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+padding-left.px: 20
+padding-top.px: 30
+background.solid: black
+align-content: center
+
+
+-- ftd.text: $swe-folio-temp.contact-about 
+color: white
+role: $inherited.types.heading-medium
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+
+-- contact:
+contact-1: $swe-folio-temp.contact-1
+contact-2: $swe-folio-temp.contact-2
+cta-link-1: $swe-folio-temp.contact-link-1
+cta-link-2: $swe-folio-temp.contact-link-2
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+children: $swe-folio-temp.work-child
+
+
+-- end: ftd.column
+
+
+-- footer:
+copyright: $swe-folio-temp.copyright
+logo-1: $swe-folio-temp.social-logo-1
+logo-2: $swe-folio-temp.social-logo-2
+logo-3: $swe-folio-temp.social-logo-3
+logo-4: $swe-folio-temp.social-logo-4
+cta-link-1: $swe-folio-temp.social-link-1
+cta-link-2: $swe-folio-temp.social-link-2
+cta-link-3: $swe-folio-temp.social-link-3
+cta-link-4: $swe-folio-temp.social-link-4
+
+-- end: ftd.column
+
+-- end: swe-folio-temp
