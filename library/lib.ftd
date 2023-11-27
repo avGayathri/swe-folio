@@ -131,10 +131,10 @@ margin-top.px: 30
 margin-bottom.px: 32
 
 -- ftd.text: $snapshots.sub-title
-classes: sub-title
+classes: font-m
 css: [ $assets.files.style.header.css]
-role: $inherited.types.heading-medium
-color: red
+;;role: $inherited.types.heading-medium
+color: pink
 text-align: center
 margin-top.vw: 2
 
@@ -364,12 +364,16 @@ background.solid: black
 
 
 -- ftd.text: $work-row.work-title
-role: $inherited.types.heading-medium
-color: white
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-medium
+color: grey
 
 -- ftd.text: $work-row.work-year
-role: $inherited.types.heading-medium
-color: white
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-medium
+color: grey
 
 -- end: ftd.row
 
@@ -384,12 +388,16 @@ background.solid: black
 
 
 -- ftd.text: $work-row.work-title
-role: $inherited.types.heading-small
-color: white
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-small
+color: grey
 
 -- ftd.text: $work-row.work-year
-role: $inherited.types.heading-small
-color: white
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-small
+color: grey
 
 -- end: ftd.row
 
@@ -427,8 +435,10 @@ margin-bottom.px if { ftd.device == "mobile" }: 4
 margin-top.px if { ftd.device == "mobile" }: 12
 
 -- ftd.text: $works.title
-role: $inherited.types.heading-large
-color: grey
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-large
+color: pink
 padding-left.px if { ftd.device == "desktop" }: 64
 padding-left.px if { ftd.device == "mobile" }: 10
 
@@ -683,8 +693,10 @@ margin-top.px: 20
 
 
 -- ftd.text: $swe-folio-temp.about
+classes: font
+css: [ $assets.files.style.header.css]
 color: white
-role: $inherited.types.heading-medium
+;;role: $inherited.types.heading-medium
 
 -- end: ftd.column
 
@@ -692,7 +704,9 @@ role: $inherited.types.heading-medium
 spacing.fixed.px: 20
 
 -- ftd.text: $swe-folio-temp.social-text-1
-role: $inherited.types.copy-large
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 link: $swe-folio-temp.social-link-1 
 color if {swe-folio-temp.is-active-1}: grey
@@ -700,7 +714,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-2
-role: $inherited.types.copy-large
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white 
 link: $swe-folio-temp.social-link-2
 color if {swe-folio-temp.is-active-2}: grey
@@ -708,7 +724,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-3
-role: $inherited.types.copy-large
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 link: $swe-folio-temp.social-link-3 
 color if {swe-folio-temp.is-active-3}: grey
@@ -716,7 +734,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-4
-role: $inherited.types.copy-large
+classes: font
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 link: $swe-folio-temp.social-link-4 
 color if {swe-folio-temp.is-active-4}: grey
@@ -741,8 +761,10 @@ align-content: center
 -- ftd.column:
 
 -- ftd.text: $swe-folio-temp.about
-color: white
-role: $inherited.types.heading-small
+color: pink
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-small
 text-align: center
 
 -- end: ftd.column
@@ -753,7 +775,9 @@ spacing.fixed.px: 12
 align-content: center
 
 -- ftd.text: $swe-folio-temp.social-text-1
-role: $inherited.types.copy-large
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 text-align: center
 link: $swe-folio-temp.social-link-1 
@@ -762,7 +786,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-1, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-2
-role: $inherited.types.copy-large
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white 
 text-align: center
 link: $swe-folio-temp.social-link-2
@@ -771,7 +797,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-2, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-3
-role: $inherited.types.copy-large
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 text-align: center
 link: $swe-folio-temp.social-link-3 
@@ -780,7 +808,9 @@ $on-mouse-enter$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $swe-folio-temp.is-active-3, v = false)
 
 -- ftd.text: $swe-folio-temp.social-text-4
-role: $inherited.types.copy-large
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.copy-large
 color: white
 text-align: center
 link: $swe-folio-temp.social-link-4 
@@ -811,8 +841,10 @@ background.solid: black
 align-content: center
 
 -- ftd.text: $swe-folio-temp.contact-about 
-color: white
-role: $inherited.types.heading-medium
+color: pink
+classes: font-m
+css: [ $assets.files.style.header.css]
+;;role: $inherited.types.heading-medium
 text-align: center
 
 -- ftd.column:

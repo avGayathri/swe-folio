@@ -75,3 +75,15 @@
     -webkit-transform: scale(1.2);
     transform: scale(1.2); 
   }
+
+  .font {
+    font-family: 'Courier New', monospace;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .font-m {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    font-weight: bold;
+  }
