@@ -289,7 +289,7 @@ classes: contact-row-1
 css: [$assets.files.style.header.css]
 width.fixed.vw: 80
 height.fixed.vw: 12
-padding.px: 4
+padding.px: 8
 border-radius.px: 40
 link: $contact.cta-link-1
 
@@ -310,7 +310,7 @@ classes: contact-row-2
 css: [$assets.files.style.header.css]
 width.fixed.vw: 80
 height.fixed.vw: 12
-padding.px: 2
+padding.px: 6
 border-radius.px: 40
 background.solid: black
 border-color: white
@@ -837,6 +837,7 @@ sub-title: $swe-folio-temp.sub-title-text
 width: fill-container
 height: fill-container
 padding-top.px: 30
+padding-bottom.px: 20
 background.solid: black
 align-content: center
 
@@ -849,6 +850,7 @@ text-align: center
 
 -- ftd.column:
 align-self: center
+margin-top.px: 12
 
 -- contact:
 contact-1: $swe-folio-temp.contact-1
