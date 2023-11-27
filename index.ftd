@@ -7,7 +7,7 @@ head-text-2: Works
 head-text-3: Skills
 head-text-4: Contact
 head-link-1: https://trizui.trizwit.com/
-head-link-2: https://trizui.trizwit.com/
+head-link-2: index.html#work-id
 head-link-3: https://trizui.trizwit.com/
 head-link-4: https://trizui.trizwit.com/
 social-text-1: Github
@@ -36,6 +36,7 @@ copyright: Copyright © 2023 - David, Software Engineer
 
 -- lib.works:
 title: works
+$works-container-id: work-id
 
 -- lib.work-row: 
 work-title: PEGASUS

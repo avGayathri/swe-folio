@@ -408,6 +408,7 @@ color: white
 
 -- component works:
 string title:
+string $works-container-id:
 children work:
 
 -- ftd.column:
@@ -415,6 +416,7 @@ width: fill-container
 height: fill-container
 background.solid: black
 padding-bottom.px: 20
+id: $works.works-container-id
 
 
 -- ftd.row: 
